@@ -1,7 +1,7 @@
 #!/bin/bash
 
-P1=Trump
-P2=Musk
+P1=Modi
+P2=AmitShah
 
 echo "$P1: hey $P2, how are you?"
 echo "$P2 hi, good"
