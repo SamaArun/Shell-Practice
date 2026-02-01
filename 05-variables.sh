@@ -2,6 +2,6 @@
 
 echo "ENter your pin number"
 
-read PIN ##here PIN is variable
+read -s PIN ##here PIN is variable #-s passworrd is not visible
 
 echo "Your number is: $PIN"
