@@ -1,6 +1,6 @@
 #!/bin/bash
 
-P1=$2
+P1=$1
 P2=$2
 
 echo "$P1: hey $P2, how are you?"
