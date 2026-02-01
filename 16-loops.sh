@@ -38,7 +38,7 @@ do
     dnf list installed $PACKAGE &>>$LOG_FILE
     if [ $? -ne 0 ]; 
     then
-        echo "MariaDB is not installed.. going to install it" | tee -a $LOG_FILE
+        echo "$PACKAGE is not installed.. going to install it" | tee -a $LOG_FILE
         dnf install $PACKAGE -y &>>$LOG_FILE
         VALIDATE $? "$PACKAGE"
     else
