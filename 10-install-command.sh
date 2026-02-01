@@ -10,7 +10,9 @@ else
     echo "You are running with root access"
 fi
 
-dnf install mariadb-server -y
+amazon-linux-extras enable mariadb10.5
+yum clean metadata
+yum install mariadb-server -y
 
 if [ $? -eq 0 ]
 then
