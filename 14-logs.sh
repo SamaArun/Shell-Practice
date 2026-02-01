@@ -72,7 +72,7 @@ fi
 
 PACKAGE="nginx"
 
-dnf list installed $PACKAGE | tee -a $LOG_FILE
+dnf list installed $PACKAGE &>>$LOG_FILE
 
 # check already installed or not, if installed $? is 0
 # if not installed $? is not 0, expression is true
