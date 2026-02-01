@@ -66,7 +66,7 @@ if [ $? -ne 0 ]; then
 
     VALIDATE $? "python3"
 else
-    echo -e "nothing to do..$Y Python3 is already installed $N" &>>$LOG_FILE
+    echo -e "nothing to do..$Y Python3 is already installed $N" | tee -a $LOG_FILE
 
 fi
 
