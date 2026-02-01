@@ -80,7 +80,7 @@ if [ $? -ne 0 ]; then
     echo "Nginx is not installed.. going to install it" | tee -a $LOG_FILE
 
 
-    dnf install $PACKAGE | tee -a $LOG_FILE
+    dnf install $PACKAGE -y &>>$LOG_FILE
 
 
     VALIDATE $? "nginx"
