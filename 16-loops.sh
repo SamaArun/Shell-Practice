@@ -40,7 +40,7 @@ do
     then
         echo "MariaDB is not installed.. going to install it" | tee -a $LOG_FILE
         dnf install $PACKAGE -y &>>$LOG_FILE
-        VALIDATE $? "mariadb105-server"
+        VALIDATE $? "$PACKAGE"
     else
         echo -e "nothing to do.. $Y $PACKAGE is already installed $N" | tee -a $LOG_FILE
 
