@@ -10,12 +10,31 @@ else
     echo "You are running with root access"
 fi
 
-dnf install mariadb105-server -y
+dnf list installed mariadb
 
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then
-    echo " Installing MySQL is ..SUCCESS"
-else
-    echo "Install MYSQL is ... FAILURE"
-    exit 1
+    echo "MySQL is not installed.. going to install it"
+    dnf install mariadb105-server -y
+
+    if [ $? -eq 0 ]
+    then
+        echo " Installing MySQL is ..SUCCESS"
+    else
+        echo "Install MYSQL is ... FAILURE"
+        exit 1
 fi
+else
+    echo "MySQL is already installed.. nothing to do"
+   
+fi
+
+# dnf install mariadb105-server -y
+
+# if [ $? -eq 0 ]
+# then
+#     echo " Installing MySQL is ..SUCCESS"
+# else
+#     echo "Install MYSQL is ... FAILURE"
+#     exit 1
+# fi
