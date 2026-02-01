@@ -72,15 +72,15 @@ fi
 
 PACKAGE="nginx"
 
-dnf list installed $PACKAGE &>>$LOG_FILE
+dnf list installed $PACKAGE | tee -a $LOG_FILE
 
 # check already installed or not, if installed $? is 0
 # if not installed $? is not 0, expression is true
 if [ $? -ne 0 ]; then
-    echo "Nginx is not installed.. going to install it" &>>$LOG_FILE
+    echo "Nginx is not installed.. going to install it" | tee -a $LOG_FILE
 
 
-    dnf install $PACKAGE &>>$LOG_FILE
+    dnf install $PACKAGE | tee -a $LOG_FILE
 
 
     VALIDATE $? "nginx"
