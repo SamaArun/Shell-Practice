@@ -39,3 +39,5 @@ echo "hello no colors"
 # RESET="\e[0m"
 
 # echo -e "${GREEN}Installed successfully${RESET}"
+
+#-e allows echo to interpret special characters and colors

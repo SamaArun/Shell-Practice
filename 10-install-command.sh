@@ -12,7 +12,8 @@ fi
 PACKAGE="mariadb105-server"
 
 dnf list installed $PACKAGE &>/dev/null
-
+#check already installed or not, if installed $? is 0, then
+#if not installed is not 0 .expression is true
 if [ $? -ne 0 ]; then
     echo "MariaDB is not installed.. going to install it"
 
