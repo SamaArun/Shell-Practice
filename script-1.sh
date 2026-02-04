@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GREETIN="Hello, Good Morning"
+GREETING="Hello, Good Morning"
 echo "$GREETING"
 echo "PID of SCRIPT-1: $$
 
