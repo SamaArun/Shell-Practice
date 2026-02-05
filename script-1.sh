@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 GREETING="Hello, Good Morning"
 
-echo "PID of SCRIPT-1: $$"
 echo "$GREETING"
-. ./script-2.sh
+echo "PID of SCRIPT-1: $$"
+
+#./script-2.sh
+source ./script-2.sh
+
+echo "GREETING after source: $GREETING"
 
