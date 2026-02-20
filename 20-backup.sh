@@ -120,3 +120,64 @@ fi
 # crontab --> scheduling the scripts in linux --> usually non business hours at 3 or 4AM
 
 # * * * * * sudo sh /home/ec2-user/shell-practice/20-backup.sh /home/ec2-user/source-dir /home/ec2-user/dest-dir
+#* * * * * sudo backup /home/ec2-user/source-dir  /home/ec2-user/dest_dir #after command
+
+#for making command: sudo cp 20-backup.sh /usr/local/bin/backup
+#sudo chmod +x /usr/local/bin/backup
+
+#work with sudo #sudo backup
+
+#/usr/local/bin/ we need to add in #sudo visudo #secure_path add /local
+
+# Crontab
+# ========
+# /usr/bin:/bin
+#recently I was given a script to create backup of the files, I successfully created the script and shceduled in crontab, but command not found in crontab. When I executed it is working fine manually. Later I understood PATH is bare minimum in crontab so I changed my script as command into /usr/bin directory. It started working fine..
+
+#10 change $SCRIPT_NAME to backup
+
+#df -hT 
+#df -hT | awk '{print $6F}'
+#df -hT | grep -v Filesystem | awk '{print $6F}'#cuts the line 
+
+#df -hT | grep -v Filesystem | awk '{print $6F}' | cut -d "%" -f1
+
+#df -hT | grep -v Filesystem | awk '{print $7F}'
+
+# 2️⃣ Check disk usage
+# df -hT
+
+# Sample output (as seen)
+# Filesystem                      Type   Size  Used Avail Use% Mounted on
+# devtmpfs                        devtmpfs 4.0M     0  4.0M   0% /dev
+# tmpfs                           tmpfs   355M     0  355M   0% /dev/shm
+# tmpfs                           tmpfs   142M   2.3M 140M   2% /run
+# /dev/mapper/RootVG-rootVol      xfs     6.8G   1.8G 4.2G  30% /
+# /dev/mapper/RootVG-varVol       xfs     2.0G   418M 1.6G  22% /var
+# /dev/mapper/RootVG-varTmpVol    xfs     2.0G    47M 1.9G   3% /var/tmp
+# /dev/mapper/RootVG-homeVol      xfs     960M    40M 921M   5% /home
+# /dev/mapper/RootVG-logVol       xfs     2.0G    66M 1.9G   4% /var/log
+# /dev/nvme0n1p3                  xfs     424M   223M 202M  53% /boot
+# /dev/nvme0n1p2                  vfat    122M   7.0M 115M   6% /boot/efi
+# /dev/mapper/RootVG-auditVol     xfs     4.4G    64M 4.3G   2% /var/log/audit
+# tmpfs                           tmpfs    71M     0   71M   0% /run/user/1001
+
+
+
+# 4️⃣ Correct awk command
+# df -hT | awk '{print $6}'
+
+# Output shown
+# Use%
+# 0%
+# 0%
+# 2%
+# 30%
+# 22%
+# 3%
+# 5%
+# 4%
+# 53%
+# 6%
+# 2%
+# 0%
